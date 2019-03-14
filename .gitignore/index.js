@@ -77,7 +77,7 @@ client.on('ready', async () => {
 
     setInterval(function() {
         let status = statuses[Math.floor(Math.random() * statuses.length)];
-        client.user.setGame(status, 'https://twitch.tv/D3KU_Bot')
+        client.user.setGame(status, 'https://twitch.tv/discord')
     }, 4000)
 })
 
