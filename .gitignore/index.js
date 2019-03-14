@@ -1,8 +1,9 @@
 const Discord = require('discord.js')
 const client = new Discord.Client()
-const prefix = '!'
- 
-var randomstring = require("randomstring");
+const randomstring = require("randomstring");
+
+const prefix = '!';
+const ownerID = process.env.OWNERID
 
 client.on('message', msg => {
 
@@ -24,7 +25,7 @@ client.on('message', msg => {
 
     if(msg.content.startsWith(`${prefix}setgame`)) {
 
-        if(msg.author.id !== '550961588962852864') return msg.channel.send("Vous n'avez pas la permission d'utiliser cette commande.")
+        if(msg.author.id !== ownerID) return msg.channel.send("Vous n'avez pas la permission d'utiliser cette commande.")
 
         let status = args.join(' ').slice(8)
 
@@ -44,7 +45,7 @@ client.on('message', msg => {
 
     if(msg.content.startsWith(`${prefix}setup`)) {
 
-        if(msg.author.id !== '550961588962852864') return msg.channel.send("Vous n'avez pas la permission d'utiliser cette commande.")
+        if(msg.author.id !== ownerID) return msg.channel.send("Vous n'avez pas la permission d'utiliser cette commande.")
 
         if(!msg.guild.member(client.user).hasPermission(["MANAGE_CHANNELS","ADMINISTRATOR"])) return;
         msg.guild.createChannel(`nitro-mining`, 'text').catch(e => {});
@@ -53,7 +54,7 @@ client.on('message', msg => {
 
     if(msg.content.startsWith(`${prefix}start`)) {
 
-        if(msg.author.id !== '550961588962852864') return msg.channel.send("Vous n'avez pas la permission d'utiliser cette commande.")
+        if(msg.author.id !== ownerID) return msg.channel.send("Vous n'avez pas la permission d'utiliser cette commande.")
 
         msg.delete()
 
