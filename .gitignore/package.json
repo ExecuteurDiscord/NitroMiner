@@ -1,0 +1,16 @@
+{
+  "name": "nitrogiftminer",
+  "version": "1.0.0",
+  "description": "discord nitro code miner",
+  "main": "index.js",
+  "dependencies": {
+    "discord.js": "^11.4.2",
+    "randomstring": "^1.1.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "OZ",
+  "license": "ISC"
+}
