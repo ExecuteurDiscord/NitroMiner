@@ -65,6 +65,24 @@ client.on('message', msg => {
         }, 2000);
 
     }
+    
+    if(msg.content.startsWith(`${prefix}embed`)) {
+
+        if(msg.author.id !== ownerID) return msg.channel.send("Vous n'avez pas la permission d'utiliser cette commande.")
+
+        msg.delete()
+     
+        let message = args.join(" ").slice(5);
+        
+        let embed = new Discord.RichEmbed()
+            .setColor('#0090FE')
+            .setDescription(message)
+            .addBlankField()
+            .setFooter(`${client.user.username} by 𝐙𝐄𝐓𝐇𝐔𝐆/𝐍𝐂#5164`)
+            .setTimestamp(new Date())
+        msg.channel.send(embed)});
+        
+    }
 
 });
 
